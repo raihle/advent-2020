@@ -24,7 +24,21 @@ export const findTupleWithSum = function (
   throw new Error("No tuple can be created which sums to the target");
 };
 
-function helper(numbers, startIndex, leftToPick, target) {
+interface Success {
+  success: true;
+  numbers: Array<number>;
+}
+
+interface Failure {
+  success: false;
+}
+
+function helper(
+  numbers: Array<number>,
+  startIndex: number,
+  leftToPick: number,
+  target: number
+): Success | Failure {
   if (leftToPick <= 1) {
     if (numbers.indexOf(target) >= 0) {
       return {
