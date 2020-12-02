@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watchAll",
-    "day1": "npx ts-node 1/index.ts"
+    "day1": "npx ts-node 1/index.ts",
+    "day2": "npx ts-node 2/index.ts"
   },
   "author": "Jacob Raihle",
   "license": "MIT",
