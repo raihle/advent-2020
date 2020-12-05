@@ -1,23 +1,23 @@
 import { linesAsArray } from "../util/readFile";
-import { parseInstructions, parseId } from "./binaryPartition";
 
 const inputLines = linesAsArray("5/input.txt");
-const seats = inputLines.map(parseInstructions);
+const sortedSeatIds = inputLines.map(parseToId).sort((a, b) => a - b);
 
-console.log("Part 1", findHighestSeatId(seats));
-console.log("Part 2", findMissingSeatId(seats));
+console.log("Part 1", sortedSeatIds[sortedSeatIds.length - 1]);
+console.log("Part 2", findMissingSeat(sortedSeatIds));
 
-function findHighestSeatId(seatingInstructions) {
-  return seatingInstructions.sort((a, b) => b.id - a.id)[0];
-}
-
-function findMissingSeatId(seats) {
-  const sortedIds = seats.map(({ id }) => id).sort((a, b) => a - b);
-  let previousId = sortedIds[0] - 1;
-  for (const currentId of sortedIds) {
+function findMissingSeat(sortedSeatIds) {
+  let previousId = sortedSeatIds[0] - 1;
+  for (const currentId of sortedSeatIds) {
     if (currentId > previousId + 1) {
       return previousId + 1;
     }
     previousId = currentId;
   }
+}
+
+function parseToId(instructions: string) {
+  const binary = instructions.replace(/[BR]/g, "1").replace(/[FL]/g, "0");
+  const id = parseInt(binary, 2);
+  return id;
 }
