@@ -10,7 +10,8 @@
     "day2": "npx ts-node 2/index.ts",
     "day3": "npx ts-node 3/index.ts",
     "day4": "npx ts-node 4/index.ts",
-    "day5": "npx ts-node 5/index.ts"
+    "day5": "npx ts-node 5/index.ts",
+    "day6": "npx ts-node 6/index.ts"
   },
   "author": "Jacob Raihle",
   "license": "MIT",
