@@ -5,3 +5,8 @@ export const sum = function (array) {
 export const product = function (array) {
   return array.reduce((total, next) => total * next, 1);
 };
+
+export const smallestMultipleAtLeastAsLargeAs = function (toMultiply, target) {
+  const factor = Math.ceil(target / toMultiply);
+  return toMultiply * factor;
+};
