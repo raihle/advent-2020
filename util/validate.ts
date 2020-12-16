@@ -1,6 +1,6 @@
 export function intBetween(min, max) {
   return function (input) {
-    const val = parseInt(input);
+    const val = parseInt(input, 10);
     return min <= val && val <= max;
   };
 }
