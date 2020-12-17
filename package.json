@@ -21,7 +21,8 @@
     "day13": "npx ts-node 13/index.ts",
     "day14": "npx ts-node 14/index.ts",
     "day15": "npx ts-node 15/index.ts",
-    "day16": "npx ts-node 16/index.ts"
+    "day16": "npx ts-node 16/index.ts",
+    "day17": "npx ts-node 17/index.ts"
   },
   "author": "Jacob Raihle",
   "license": "MIT",
